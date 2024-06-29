@@ -1,7 +1,3 @@
 _book
-node_modules
-npm-debug.log
-coverage
 plugins/*
-yarn-error.log
 coverage

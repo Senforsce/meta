@@ -41,7 +41,7 @@ func runForm(config *Config) (*Config, error) {
 	err := f.Run()
 
 	if config.Output == "" {
-		config.Output = defaultOutputFilename
+		config.Output = ".meta.ttl"
 	}
 
 	config.Padding = parsePadding(padding)

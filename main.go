@@ -70,7 +70,7 @@ func main() {
 		os.Exit(0)
 
 	case "update":
-		print("update")
+		print("update", "NOT IMPLEMENTED")
 
 		os.Exit(0)
 	}
@@ -91,8 +91,8 @@ func main() {
 
 }
 
-var outputHeader = lipgloss.NewStyle().Foreground(lipgloss.Color("#F1F1F1")).Background(lipgloss.Color("#6C50FF")).Bold(true).Padding(0, 1).MarginRight(1).SetString("WROTE")
+func print(line string, headerText string) {
+	head := lipgloss.NewStyle().Foreground(lipgloss.Color("#F1F1F1")).Background(lipgloss.Color("#6C50FF")).Bold(true).Padding(0, 1).MarginRight(1).SetString(headerText)
 
-func print(filename string) {
-	fmt.Println(lipgloss.JoinHorizontal(lipgloss.Center, outputHeader.String(), filename))
+	fmt.Println(lipgloss.JoinHorizontal(lipgloss.Center, head.String(), line))
 }

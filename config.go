@@ -3,7 +3,6 @@ package main
 import (
 	"embed"
 	"encoding/json"
-	"fmt"
 	"io"
 	"io/fs"
 	"os"
@@ -14,8 +13,6 @@ import (
 	"github.com/adrg/xdg"
 	"github.com/go-git/go-git/v5"
 )
-
-const defaultOutputFilename = "freeze.png"
 
 type Project struct {
 	RepoURL       string
@@ -153,7 +150,7 @@ func cloneProjects() error {
 	}
 
 	for _, p := range c.Projects {
-		fmt.Printf("Will clone : %s \n", path.Dir(e+"/"+p.Directory))
+		print(path.Dir(e+"/"+p.Directory), "WILL CLONE")
 		_, err := git.PlainClone(path.Dir(e+"/"+p.Directory), false, &git.CloneOptions{
 			URL:      p.RepoURL,
 			Progress: os.Stdout,
@@ -189,7 +186,7 @@ func saveUserConfig(config Config) error {
 	}
 	_, err = f.Write(b)
 
-	print(userConfigPath)
+	print(userConfigPath, "SAVED")
 
 	return err
 }

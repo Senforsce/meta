@@ -1,10 +1,6 @@
 package main
 
 import (
-	"fmt"
-	"strconv"
-	"strings"
-
 	"github.com/charmbracelet/huh"
 	"github.com/charmbracelet/lipgloss"
 )
@@ -12,9 +8,6 @@ import (
 var green = lipgloss.Color("#03BF87")
 
 func runForm(config *Config) (*Config, error) {
-	var (
-		padding = strings.Trim(fmt.Sprintf("%v", config.Padding), "[]")
-	)
 
 	theme := huh.ThemeCharm()
 	theme.FieldSeparator = lipgloss.NewStyle()
@@ -44,8 +37,6 @@ func runForm(config *Config) (*Config, error) {
 		config.Output = ".meta.ttl"
 	}
 
-	config.Padding = parsePadding(padding)
-
 	return config, err
 }
 
@@ -61,14 +52,3 @@ func runForm(config *Config) (*Config, error) {
 // 	}
 // 	return nil
 // }
-
-func parsePadding(v string) []float64 {
-	var values []float64
-	for _, p := range strings.Fields(v) {
-		pi, _ := strconv.ParseFloat(p, 64) // already validated
-		values = append(values, pi)
-	}
-	return expandPadding(values, 1)
-}
-
-var parseMargin = parsePadding

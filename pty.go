@@ -22,7 +22,7 @@ func (cfg Config) runInPty(c *exec.Cmd) (*os.File, error) {
 	return pty.StartWithAttrs(c, &pty.Winsize{
 		Cols: 80,
 		Rows: 10,
-		X:    uint16(cfg.Width),
+		X:    uint16(600),
 	}, &syscall.SysProcAttr{})
 }
 

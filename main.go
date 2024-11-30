@@ -8,12 +8,6 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-const (
-	defaultFontSize        = 14.0
-	defaultLineHeight      = 1.2
-	defaultProjectFilename = ".meta.ttl"
-)
-
 var (
 	// Version contains the application version number. It's set via ldflags
 	// when building.
@@ -23,6 +17,25 @@ var (
 	// against. It's set via ldflags when building.
 	CommitSHA = ""
 )
+
+func init() {
+	driver, ok := os.LookupEnv("O8ROOT")
+
+	if !ok {
+		fmt.Println("O8ROOT is not present, please make sure O8ROOT is exported before running the command")
+	} else {
+		fmt.Printf("OntologyRootFolder: %s\n", driver)
+	}
+
+	ns, ok := os.LookupEnv("O8_META_NAMESPACE")
+
+	if !ok {
+		fmt.Println("O8NAMESPACE is not present, please make sure O8NAMESPACE is exported before running the command")
+	} else {
+		fmt.Printf("OntologyRootNamespace: %s\n", ns)
+	}
+
+}
 
 func main() {
 	const shaLen = 8
@@ -47,11 +60,6 @@ func main() {
 		}
 
 		fmt.Println(version)
-		os.Exit(0)
-
-	case "init":
-		config := &Config{}
-		saveUserConfig(*config)
 		os.Exit(0)
 
 	case "add":

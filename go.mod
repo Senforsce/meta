@@ -1,9 +1,8 @@
 module github.com/senforsce/meta
 
-go 1.21.6
+go 1.23.3
 
 require (
-	github.com/adrg/xdg v0.4.0
 	github.com/alecthomas/chroma/v2 v2.14.0
 	github.com/alecthomas/kong v0.9.0
 	github.com/caarlos0/go-shellwords v1.0.12
@@ -11,6 +10,7 @@ require (
 	github.com/charmbracelet/lipgloss v0.11.0
 	github.com/creack/pty v1.1.21
 	github.com/go-git/go-git/v5 v5.12.0
+	github.com/nvkp/turtle v1.2.1
 )
 
 require (

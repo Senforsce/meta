@@ -1,14 +1,3 @@
-[![Build Status](https://travis-ci.com/mateodelnorte/meta.svg?branch=master)](https://travis-ci.com/mateodelnorte/meta)
-[![npm version](https://badge.fury.io/js/meta.svg)](https://badge.fury.io/js/meta)
-<img src="https://img.shields.io/github/release-date/mateodelnorte/meta.svg" alt="Latest Release Date" />
-
-<span class="badge-daviddm"><a href="https://www.npmjs.com/package/meta" title="View the status of this project's dependencies on NPM"><img src="https://img.shields.io/david/mateodelnorte/meta.svg" alt="Dependency Status" /></a></span>
-<span class="badge-daviddmdev"><a href="https://www.npmjs.com/package/meta" title="View the status of this project's development dependencies on DavidDM"><img src="https://img.shields.io/david/dev/mateodelnorte/meta.svg" alt="Dev Dependency Status" /></a></span>
-
-<span class="badge-npmdownloads"><a href="https://npmjs.org/package/meta" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/meta.svg" alt="NPM downloads" /></a></span>
-<span><img src="https://img.shields.io/github/contributors/mateodelnorte/meta.svg" alt="Contributors" /></span>
-<span class="badge-daviddmdev"><a href="https://gitter.im/meta-repos-ftw/Lobby" title="Discuss meta on Gitter"><img src="https://img.shields.io/gitter/room/mateodelnorte/meta.svg" alt="Gitter" /></a></span>
-
 # meta
 
 meta is a tool for managing multi-project systems and libraries. It answers the conundrum of choosing between a mono repo or many repos by saying "both", with a meta repo!
@@ -34,7 +23,7 @@ meta is packaged with a few of these core plugins by default: https://github.com
 
 ## installing
 
-`npm i -g meta` will install a `meta` command on your system.
+`go install github.com/senforsce/meta` will install a `meta` command on your system.
 
 ## initializing a new meta project
 
